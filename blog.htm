@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Technical Notes — Built by One Engineer</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0b0d10;
+      --panel: rgba(255, 255, 255, 0.05);
+      --text: #e6e6eb;
+      --muted: #9aa0aa;
+      --accent: #4f8cff;
+      --border: rgba(255, 255, 255, 0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(circle at top, #12151c, var(--bg));
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    header {
+      padding: 80px 24px 60px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 80px;
+    }
+
+    .logo {
+      font-weight: 600;
+      font-size: 18px;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .nav-button {
+      font-size: 13px;
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      cursor: default;
+      user-select: none;
+    }
+
+    h1 {
+      font-size: clamp(36px, 5vw, 64px);
+      font-weight: 700;
+      max-width: 900px;
+      margin-bottom: 24px;
+    }
+
+    h1 span {
+      color: var(--accent);
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 720px;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 24px 120px;
+    }
+
+    .manifesto {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 80px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      backdrop-filter: blur(12px);
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(79, 140, 255, 0.4);
+    }
+
+    .card h3 {
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      font-size: 15px;
+      color: var(--muted);
+    }
+
+    .divider {
+      margin: 100px 0 60px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--border), transparent);
+    }
+
+    .section-title {
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+
+    .section-text {
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    footer {
+      padding: 40px 24px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    footer span {
+      color: var(--text);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="logo">Cyber Pedia</div>
+
+      <div class="nav-right">
+        <div class="nav-button">Home</div>
+        <div class="nav-button">Blogs</div>
+      </div>
+    </nav>
+
+    <h1>
+      A place where <span>technical knowledge</span><br>
+      is written with intent, not algorithms.
+    </h1>
+
+    <p class="subtitle">
+      I write technical blogs to document real engineering work, deep dives, and
+      hard-earned lessons. This site exists for one reason only: clarity.
+    </p>
+  </header>
+
+  <main>
+    <section class="manifesto">
+      <div class="card">
+        <h3>No Ads. Ever.</h3>
+        <p>
+          I don’t monetize attention. There are no banners, no trackers,
+          and no dark patterns. Reading here costs nothing.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>No AI-Generated Content</h3>
+        <p>
+          Every article is written by me. No automated text,
+          no content farms, and no synthetic filler.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Admin-Only Blogs</h3>
+        <p>
+          This is not a multi-author platform. I publish intentionally,
+          slowly, and only when there is something worth saying.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Completely Free</h3>
+        <p>
+          There are no paywalls, subscriptions, or accounts.
+          Knowledge should be accessible without friction.
+        </p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section>
+      <h2 class="section-title">Why This Exists</h2>
+      <p class="section-text">
+        I created this site as a long-term archive of technical writing.
+        Not tutorials for clicks, not trends for SEO — just clean,
+        well-structured explanations meant to age well.
+        <br><br>
+        If you’re here, you’re probably someone who values depth,
+        correctness, and honesty in engineering.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      © <span id="year"></span> — Built and written by one engineer.
+      No ads. No AI. No tracking.
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
